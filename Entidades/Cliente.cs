@@ -15,7 +15,7 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public decimal Total { get; set; }
-        public DateTime Fecha { get; set; }
+      
 
 
         public Cliente()
@@ -25,7 +25,7 @@ namespace Entidades
             Cedula= string.Empty;
             Direccion= string.Empty;
             Telefono= string.Empty;
-            Fecha = DateTime.Now;
+            
             Total =0;
         }
     }

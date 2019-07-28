@@ -46,8 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.GananciaTextBox = new System.Windows.Forms.TextBox();
-            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaArticuloIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadArticulonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaerrorProvider)).BeginInit();
@@ -224,31 +222,11 @@
             this.GananciaTextBox.TabIndex = 16;
             this.GananciaTextBox.TextChanged += new System.EventHandler(this.GananciaTextBox_TextChanged);
             // 
-            // FechaDateTimePicker
-            // 
-            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(339, 91);
-            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(84, 20);
-            this.FechaDateTimePicker.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(350, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Fecha";
-            // 
             // RegistroEntradaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 339);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.GananciaTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.PrecioVentanumericUpDown);
@@ -296,7 +274,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox GananciaTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

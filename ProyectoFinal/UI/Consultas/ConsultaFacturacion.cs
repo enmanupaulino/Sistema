@@ -14,7 +14,7 @@ namespace ProyectoFinal.UI.Consultas
 {
     public partial class ConsultaFacturacion : Form
     {
-        
+        List<Facturacion> facturacions = new List<Facturacion>();
         public ConsultaFacturacion()
         {
             InitializeComponent();
@@ -52,6 +52,18 @@ namespace ProyectoFinal.UI.Consultas
             
             ConsultadataGridView.DataSource = FacturacionBLL.GetList(filtrar);
             ConsultadataGridView.Columns["Detalle"].Visible = false;
+            if (FechaCheckBox.Checked == true)
+            {
+                facturacions = FacturacionBLL.GetList(filtrar).Where(x => x.Fecha.Date >= DesdedateTimePicker.Value.Date && x.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = facturacions;
+            }
+            else
+            {
+                facturacions = FacturacionBLL.GetList(filtrar);
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = facturacions;
+            }
         }
 
 
@@ -78,23 +90,42 @@ namespace ProyectoFinal.UI.Consultas
             FacturacionerrorProvider.Clear();
         }
 
-    /*    private void ReporteButton_Click(object sender, EventArgs e)
+        private void GroupBox2_Enter(object sender, EventArgs e)
         {
-            Facturacion facturacionn = new Facturacion();
-            if (ConsultadataGridView.Rows.Count > 0 && ConsultadataGridView.CurrentRow != null)
-            {
-                List<Facturacion> Detalle = (List<Facturacion>)ConsultadataGridView.DataSource;
-                int id = Detalle.ElementAt(ConsultadataGridView.CurrentRow.Index).FacturaID;
 
-                ReporteFacturacion abrir = new ReporteFacturacion(FacturacionBLL.GetList(x => x.FacturaID == id));
-                abrir.Show();
+        }
+
+        private void FechaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FechaCheckBox.Checked == true)
+            {
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
             }
             else
             {
-                MessageBox.Show("No existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
             }
+        }
 
-        }*/
+        /*    private void ReporteButton_Click(object sender, EventArgs e)
+            {
+                Facturacion facturacionn = new Facturacion();
+                if (ConsultadataGridView.Rows.Count > 0 && ConsultadataGridView.CurrentRow != null)
+                {
+                    List<Facturacion> Detalle = (List<Facturacion>)ConsultadataGridView.DataSource;
+                    int id = Detalle.ElementAt(ConsultadataGridView.CurrentRow.Index).FacturaID;
+
+                    ReporteFacturacion abrir = new ReporteFacturacion(FacturacionBLL.GetList(x => x.FacturaID == id));
+                    abrir.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            }*/
     }
 }

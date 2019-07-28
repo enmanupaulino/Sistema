@@ -32,9 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
-            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FacturaIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.VentacomboBox = new System.Windows.Forms.ComboBox();
             this.ArticulocomboBox = new System.Windows.Forms.ComboBox();
@@ -64,6 +62,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.CantidadDisponibleNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FacturaIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -102,15 +102,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Venta";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(526, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Fecha";
-            // 
             // ClientecomboBox
             // 
             this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -119,15 +110,6 @@
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(121, 21);
             this.ClientecomboBox.TabIndex = 2;
-            // 
-            // FechadateTimePicker
-            // 
-            this.FechadateTimePicker.Enabled = false;
-            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(569, 9);
-            this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(102, 20);
-            this.FechadateTimePicker.TabIndex = 5;
             // 
             // FacturaIDnumericUpDown
             // 
@@ -368,7 +350,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(415, 100);
+            this.label12.Location = new System.Drawing.Point(429, 100);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 13);
             this.label12.TabIndex = 92;
@@ -429,14 +411,34 @@
             this.CantidadDisponibleNumericUpDown.TabIndex = 4;
             this.CantidadDisponibleNumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(597, 13);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(87, 20);
+            this.FechadateTimePicker.TabIndex = 96;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(554, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "Fecha";
+            // 
             // RegistroFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 530);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DevueltanumericUpDown);
             this.Controls.Add(this.ImportetextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.MontonumericUpDown);
@@ -462,9 +464,7 @@
             this.Controls.Add(this.ArticulocomboBox);
             this.Controls.Add(this.VentacomboBox);
             this.Controls.Add(this.FacturaIDnumericUpDown);
-            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.ClientecomboBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -490,9 +490,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ClientecomboBox;
-        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.NumericUpDown FacturaIDnumericUpDown;
         private System.Windows.Forms.ComboBox VentacomboBox;
         private System.Windows.Forms.ComboBox ArticulocomboBox;
@@ -522,5 +520,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown CantidadDisponibleNumericUpDown;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.Label label4;
     }
 }

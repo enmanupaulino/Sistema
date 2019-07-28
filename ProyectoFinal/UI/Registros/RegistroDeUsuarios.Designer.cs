@@ -44,8 +44,6 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             label1 = new System.Windows.Forms.Label();
             contraseñaLabel = new System.Windows.Forms.Label();
             usuarioLabel = new System.Windows.Forms.Label();
@@ -196,31 +194,11 @@
             // 
             this.UsuarioerrorProvider.ContainerControl = this;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(341, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Fecha";
-            // 
-            // FechaDateTimePicker
-            // 
-            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(330, 83);
-            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(84, 20);
-            this.FechaDateTimePicker.TabIndex = 19;
-            // 
             // RegistroDeUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 305);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Buscarbutton);
@@ -256,7 +234,5 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ErrorProvider UsuarioerrorProvider;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

@@ -77,7 +77,7 @@ namespace ProyectoFinal.UI.Registros
             usuarios.Nombre = nombreTextBox.Text;
             usuarios.Usuario = usuarioTextBox.Text;
             usuarios.Contraseña = contraseñaTextBox.Text;
-            usuarios.Fecha = FechaDateTimePicker.Value;
+            
         
             return usuarios;
         }
@@ -94,7 +94,7 @@ namespace ProyectoFinal.UI.Registros
             contraseñaTextBox.Clear();
             ConfirmartextBox.Clear();
             UsuarioerrorProvider.Clear();
-            FechaDateTimePicker.Value = DateTime.Now;
+           
          
         }
 

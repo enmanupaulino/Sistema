@@ -26,7 +26,7 @@ namespace ProyectoFinal.UI.Registros
             cliente.Direccion = (DirecciontextBox.Text);
             cliente.Telefono = (TelefonomaskedTextBox.Text);
             cliente.Total = Convert.ToInt32(TotalTextbox.Text.ToString());
-            cliente.Fecha = DateTime.Now;
+          
             
             return cliente;
         }
@@ -134,7 +134,7 @@ namespace ProyectoFinal.UI.Registros
                         TelefonomaskedTextBox.Clear();
                         TotalTextbox.Clear();
                         ClienteerrorProvider.Clear();
-                        FechaDateTimePicker.Value = DateTime.Now;
+                       
                     }
                 }
 
@@ -209,7 +209,7 @@ namespace ProyectoFinal.UI.Registros
                 DirecciontextBox.Text = cliente.Direccion;
                 TelefonomaskedTextBox.Text = cliente.Telefono;
                 TotalTextbox.Text = cliente.Total.ToString();
-                FechaDateTimePicker.Value = cliente.Fecha;
+                
           
             }
             else

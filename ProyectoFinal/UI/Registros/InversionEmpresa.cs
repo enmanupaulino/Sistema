@@ -19,7 +19,7 @@ namespace ProyectoFinal.UI.Registros
             if(inversion==null)
             {
                 inversion = new Inversion();
-                InversionBLL.Guardar(new Inversion(0, 0));
+                InversionBLL.Guardar(new Inversion(0, 0,DateTime.Now));
             }
             Montolabel.Text = 0.ToString();
             if (inversion.Monto == 0)

@@ -18,7 +18,7 @@ namespace ProyectoFinal.UI.Consultas
 
         Expression<Func<EntradaInversion, bool>> filtrar = x => true;
 
-        private void Consultabutton_Click(object sender, EventArgs e)
+       /* private void Consultabutton_Click(object sender, EventArgs e)
         {
 
             int id;
@@ -48,8 +48,8 @@ namespace ProyectoFinal.UI.Consultas
 
             inversions = EntradaInversionBLL.GetList(filtrar);
 
-            ConsultadataGridView.DataSource = inversions;
-        }
+            
+        }*/
 
         private bool SetError(int error)
         {
@@ -68,18 +68,62 @@ namespace ProyectoFinal.UI.Consultas
             EntradaerrorProvider.Clear();
         }
 
-       /* private void ReporteButton_Click(object sender, EventArgs e)
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (inversions.Count == 0)
+            if (FechaCheckBox.Checked == true)
             {
-                MessageBox.Show("No hay datos");
-                return;
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
+            }
+            else
+            {
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
+            }
+        }
+
+        private void Consultabutton_Click_1(object sender, EventArgs e)
+        {
+            int id;
+            switch (TipocomboBox.SelectedIndex)
+            {
+                //ID
+                case 0:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    id = Convert.ToInt32(CriteriotextBox.Text);
+                    filtrar = t => t.EntradaInversionID == id && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) && (t.Fecha.Year >= DesdedateTimePicker.Value.Year)
+                    && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    ;
+                    break;
+
+                //Listar Todo
+                case 1:
+
+                    filtrar = t => true;
+                    break;
             }
 
-            ReporteEntradaInversion reporte = new ReporteEntradaInversion(inversions);
-            reporte.ShowDialog();
+            inversions = EntradaInversionBLL.GetList(filtrar);
+        }
 
-        }*/
+        /* private void ReporteButton_Click(object sender, EventArgs e)
+         {
+             if (inversions.Count == 0)
+             {
+                 MessageBox.Show("No hay datos");
+                 return;
+             }
+
+             ReporteEntradaInversion reporte = new ReporteEntradaInversion(inversions);
+             reporte.ShowDialog();
+
+         }*/
     }
 }
 

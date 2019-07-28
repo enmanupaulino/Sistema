@@ -24,7 +24,7 @@ namespace Entidades
         {
             InversionID = inversionID;
             Monto = monto;
-            Fecha = fecha;
+            Fecha = DateTime.Now;
         }
     }
 }

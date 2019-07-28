@@ -16,7 +16,7 @@ namespace Entidades
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
         public decimal Ganancia { get; set; }
-        public DateTime Fecha { get; set; }
+       
 
 
         public EntradaArticulos()
@@ -27,7 +27,7 @@ namespace Entidades
             PrecioCompra = 0;
             PrecioVenta = 0;
             Ganancia=0;
-            Fecha = DateTime.Now;
+           
         }
     }
 }

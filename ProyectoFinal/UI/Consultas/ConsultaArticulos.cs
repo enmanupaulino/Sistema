@@ -76,6 +76,19 @@ namespace ProyectoFinal.UI.Consultas
             articulos = ArticulosBLL.GetList(filtrar);
 
             ConsultadataGridView.DataSource =articulos;
+
+            if (FechaCheckBox.Checked == true)
+            {
+                articulos = ArticulosBLL.GetList(filtrar).Where(x => x.Fecha.Date >= DesdedateTimePicker.Value.Date && x.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = articulos;
+            }
+            else
+            {
+                articulos = ArticulosBLL.GetList(filtrar);
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = articulos;
+            }
         }
 
         private bool SetError(int error)
@@ -101,19 +114,111 @@ namespace ProyectoFinal.UI.Consultas
             ArticuloerrorProvider.Clear();
         }
 
-       /* private void ReporteButton_Click(object sender, EventArgs e)
+        private void GroupBox2_Enter(object sender, EventArgs e)
         {
-            if (articulos.Count() == 0)
+
+        }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Consultabutton_Click_1(object sender, EventArgs e)
+        {
+            int id;
+
+            switch (TipocomboBox.SelectedIndex)
             {
-                MessageBox.Show("el grid esta vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //ID
+                case 0:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    id = int.Parse(CriteriotextBox.Text);
+                    filtrar = t => t.ArticuloID == id && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) && (t.Fecha.Year >= DesdedateTimePicker.Value.Year)
+                    && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+
+                case 1:
+                    LimpiarError();
+                    if (SetError(2))
+                    {
+                        MessageBox.Show("Introduce un caracter");
+                        return;
+                    }
+                    filtrar = t => t.Nombre == CriteriotextBox.Text && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) && (t.Fecha.Year >= DesdedateTimePicker.Value.Year)
+                    && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+                //Marca
+                case 2:
+                    LimpiarError();
+                    if (SetError(2))
+                    {
+                        MessageBox.Show("Introduce un caracter");
+                        return;
+
+                    }
+                    filtrar = t => t.Marca == CriteriotextBox.Text && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) && (t.Fecha.Year >= DesdedateTimePicker.Value.Year)
+                    && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+
+                //Listar Todo
+                case 4:
+
+                    filtrar = t => true;
+                    break;
             }
-            else {
-                    ReporteArticulos abrir = new ReporteArticulos(articulos);
-                           abrir.ShowDialog();
+
+            articulos = ArticulosBLL.GetList(filtrar);
+
+            ConsultadataGridView.DataSource = articulos;
+
+            if (FechaCheckBox.Checked == true)
+            {
+                articulos = ArticulosBLL.GetList(filtrar).Where(x => x.Fecha.Date >= DesdedateTimePicker.Value.Date && x.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = articulos;
             }
-            
-         
-        }*/
+            else
+            {
+                articulos = ArticulosBLL.GetList(filtrar);
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = articulos;
+            }
+        }
+
+        private void FechaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FechaCheckBox.Checked == true)
+            {
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
+            }
+            else
+            {
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
+            }
+        }
+
+        /* private void ReporteButton_Click(object sender, EventArgs e)
+         {
+             if (articulos.Count() == 0)
+             {
+                 MessageBox.Show("el grid esta vacio", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+             else {
+                     ReporteArticulos abrir = new ReporteArticulos(articulos);
+                            abrir.ShowDialog();
+             }
+
+
+         }*/
     }
     
 }

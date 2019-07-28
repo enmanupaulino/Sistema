@@ -93,7 +93,7 @@ namespace ProyectoFinal.UI.Consultas
 
             clientes= ClienteBLL.GetList(filtrar);
 
-            ConsultadataGridView.DataSource = clientes;
+            
         }
 
         private bool SetError(int error)
@@ -119,17 +119,92 @@ namespace ProyectoFinal.UI.Consultas
             ClienteerrorProvider.Clear();
         }
 
-       /* private void ReporteButton_Click(object sender, EventArgs e)
+        private void Consultabutton_Click_1(object sender, EventArgs e)
         {
-            if (clientes.Count == 0)
+            int id;
+
+
+
+
+            switch (TipocomboBox.SelectedIndex)
             {
-                MessageBox.Show("No hay datos");
-                return;
+                //ID
+                case 0:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    id = int.Parse(CriteriotextBox.Text);
+                    filtrar = t => t.ClienteID == id;
+                    break;
+                //Nombre
+                case 1:
+                    LimpiarError();
+                    if (SetError(2))
+                    {
+                        MessageBox.Show("Introduce un caracter");
+                        return;
+                    }
+                    filtrar = t => t.NombreCliente.Contains(CriteriotextBox.Text);
+                    break;
+
+                //Direccion
+                case 2:
+                    LimpiarError();
+                    if (SetError(2))
+                    {
+                        MessageBox.Show("Introduce un caracter");
+                        return;
+                    }
+                    filtrar = t => t.Direccion == CriteriotextBox.Text;
+                    break;
+                //Cedula
+                case 3:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    filtrar = t => t.Cedula == CriteriotextBox.Text;
+                    break;
+                //Telefono
+                case 4:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    filtrar = t => t.Telefono == CriteriotextBox.Text;
+                    break;
+                //Listar Todo
+                case 5:
+                    filtrar = t => true;
+                    break;
             }
 
-            ReporteClientess reporte = new ReporteClientess(clientes);
-            reporte.ShowDialog();
-        }*/
+            clientes = ClienteBLL.GetList(filtrar);
+        }
+
+
+
+        /* private void ReporteButton_Click(object sender, EventArgs e)
+         {
+             if (clientes.Count == 0)
+             {
+                 MessageBox.Show("No hay datos");
+                 return;
+             }
+
+             ReporteClientess reporte = new ReporteClientess(clientes);
+             reporte.ShowDialog();
+         }*/
     }
  }
 

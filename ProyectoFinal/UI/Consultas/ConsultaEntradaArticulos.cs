@@ -60,7 +60,8 @@ namespace ProyectoFinal.UI.Consultas
 
             entradaArticulos= EntradaArticulosBLL.GetList(filtrar);
 
-            ConsultadataGridView.DataSource = entradaArticulos;
+            
+
         }
 
         private bool SetError(int error)
@@ -86,17 +87,67 @@ namespace ProyectoFinal.UI.Consultas
             EntradaerrorProvider.Clear();
         }
 
-       /* private void ReporteButton_Click(object sender, EventArgs e)
+        private void GroupBox2_Enter(object sender, EventArgs e)
         {
-            if (entradaArticulos.Count == 0)
+
+        }
+
+        private void FechaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Consultabutton_Click_1(object sender, EventArgs e)
+        {
+            int id;
+
+            switch (TipocomboBox.SelectedIndex)
             {
-                MessageBox.Show("No hay datos");
-                return;
+                //ID
+                case 0:
+                    LimpiarError();
+                    if (SetError(1))
+                    {
+                        MessageBox.Show("Introduce un numero");
+                        return;
+
+                    }
+                    id = int.Parse(CriteriotextBox.Text);
+                    filtrar = t => t.EntradaArticulosID == id;
+                    break;
+                //Codigo Articulo
+                case 1:
+                    LimpiarError();
+                    if (SetError(2))
+                    {
+                        MessageBox.Show("Introduce un caracter");
+                        return;
+
+                    }
+                    filtrar = t => t.Articulo == CriteriotextBox.Text;
+                    break;
+
+                //Listar Todo
+                case 5:
+
+                    filtrar = t => true;
+                    break;
             }
 
-            ReporteEntrada reporte = new ReporteEntrada(entradaArticulos);
-            reporte.ShowDialog();
+            entradaArticulos = EntradaArticulosBLL.GetList(filtrar);
+        }
 
-        }*/
+        /* private void ReporteButton_Click(object sender, EventArgs e)
+         {
+             if (entradaArticulos.Count == 0)
+             {
+                 MessageBox.Show("No hay datos");
+                 return;
+             }
+
+             ReporteEntrada reporte = new ReporteEntrada(entradaArticulos);
+             reporte.ShowDialog();
+
+         }*/
     }
  }
