@@ -87,7 +87,7 @@
             // ReporteButton
             // 
             this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReporteButton.Location = new System.Drawing.Point(655, 26);
+            this.ReporteButton.Location = new System.Drawing.Point(684, 47);
             this.ReporteButton.Name = "ReporteButton";
             this.ReporteButton.Size = new System.Drawing.Size(108, 49);
             this.ReporteButton.TabIndex = 83;
@@ -97,7 +97,7 @@
             // Consultabutton
             // 
             this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultabutton.Location = new System.Drawing.Point(522, 26);
+            this.Consultabutton.Location = new System.Drawing.Point(551, 47);
             this.Consultabutton.Name = "Consultabutton";
             this.Consultabutton.Size = new System.Drawing.Size(108, 49);
             this.Consultabutton.TabIndex = 82;
