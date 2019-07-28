@@ -37,7 +37,7 @@ namespace ProyectoFinal.UI.Consultas
             switch (TipocomboBox.SelectedIndex)
             {
 
-                
+
                 //ID
                 case 0:
                     LimpiarError();
@@ -51,7 +51,7 @@ namespace ProyectoFinal.UI.Consultas
                     filtrar = t => t.PagoID == id && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) && (t.Fecha.Year >= DesdedateTimePicker.Value.Year)
                     && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
                     break;
-                    
+
                 //Listar Todo
                 case 1:
 
@@ -62,10 +62,22 @@ namespace ProyectoFinal.UI.Consultas
             pagos = PagosBLL.GetList(filtrar);
 
             ConsultadataGridView.DataSource = pagos;
+
+             if (FechaCheckBox.Checked == true)
+                 {
+                     pagos = PagosBLL.GetList(filtrar).Where(x => x.Fecha.Date >= DesdedateTimePicker.Value.Date && x.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = pagos;
+                 }
+                 else
+                 {
+                     pagos = PagosBLL.GetList(filtrar);
+                ConsultadataGridView.DataSource = null;
+                ConsultadataGridView.DataSource = pagos;
+                 }
+                 
         }
-
-
-        private bool SetError(int error)
+private bool SetError(int error)
         {
             bool paso = false;
             int ejem = 0;
@@ -100,6 +112,20 @@ namespace ProyectoFinal.UI.Consultas
         private void Label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FechaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FechaCheckBox.Checked == true)
+            {
+                DesdedateTimePicker.Enabled = true;
+                HastadateTimePicker.Enabled = true;
+            }
+            else
+            {
+                DesdedateTimePicker.Enabled = false;
+                HastadateTimePicker.Enabled = false;
+            }
         }
 
         /*  private void ReporteButton_Click(object sender, EventArgs e)

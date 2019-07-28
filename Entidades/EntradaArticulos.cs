@@ -1,6 +1,8 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using System.Linq;
+using System.Text;
 
 namespace Entidades
 {
@@ -14,6 +16,7 @@ namespace Entidades
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
         public decimal Ganancia { get; set; }
+        public DateTime Fecha { get; set; }
 
 
         public EntradaArticulos()
@@ -24,6 +27,7 @@ namespace Entidades
             PrecioCompra = 0;
             PrecioVenta = 0;
             Ganancia=0;
+            Fecha = DateTime.Now;
         }
     }
 }

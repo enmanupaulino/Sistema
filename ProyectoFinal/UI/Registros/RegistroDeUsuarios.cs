@@ -77,18 +77,25 @@ namespace ProyectoFinal.UI.Registros
             usuarios.Nombre = nombreTextBox.Text;
             usuarios.Usuario = usuarioTextBox.Text;
             usuarios.Contraseña = contraseñaTextBox.Text;
+            usuarios.Fecha = FechaDateTimePicker.Value;
         
             return usuarios;
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
 
+            Limpiar();
+        }
+        private void Limpiar()
+        {
+
             usuariosIdNumericUpDown.Value = 0;
             nombreTextBox.Clear();
-            usuarioTextBox.Clear();
             contraseñaTextBox.Clear();
             ConfirmartextBox.Clear();
             UsuarioerrorProvider.Clear();
+            FechaDateTimePicker.Value = DateTime.Now;
+         
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -136,13 +143,9 @@ namespace ProyectoFinal.UI.Registros
                          MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                usuariosIdNumericUpDown.Value = 0;
-                nombreTextBox.Clear();
-                usuarioTextBox.Clear();
-                contraseñaTextBox.Clear();
-                ConfirmartextBox.Clear();
-                UsuarioerrorProvider.Clear();
-                
+                Limpiar();
+
+
                 if (paso)
                 {
                     MessageBox.Show("Guardado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -168,12 +171,7 @@ namespace ProyectoFinal.UI.Registros
                 if (UsusariosBLL.Eliminar(id))
                 {
                     MessageBox.Show("Eliminado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    usuariosIdNumericUpDown.Value = 0;
-                    nombreTextBox.Clear();
-                    usuarioTextBox.Clear();
-                    contraseñaTextBox.Clear();
-                    ConfirmartextBox.Clear();
-                    UsuarioerrorProvider.Clear();
+                    Limpiar();
                 }
                 else
                 {

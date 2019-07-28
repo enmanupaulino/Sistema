@@ -43,6 +43,7 @@
             // 
             // ReporteButton
             // 
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReporteButton.Location = new System.Drawing.Point(623, 8);
             this.ReporteButton.Name = "ReporteButton";
@@ -50,10 +51,10 @@
             this.ReporteButton.TabIndex = 61;
             this.ReporteButton.Text = "Reporte";
             this.ReporteButton.UseVisualStyleBackColor = true;
-            
             // 
             // Consultabutton
             // 
+            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Consultabutton.Location = new System.Drawing.Point(490, 8);
             this.Consultabutton.Name = "Consultabutton";
@@ -65,6 +66,7 @@
             // 
             // TipocomboBox
             // 
+            this.TipocomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipocomboBox.FormattingEnabled = true;
             this.TipocomboBox.Items.AddRange(new object[] {
             "ID",
@@ -74,38 +76,41 @@
             "Listar Todo"});
             this.TipocomboBox.Location = new System.Drawing.Point(36, 36);
             this.TipocomboBox.Name = "TipocomboBox";
-            this.TipocomboBox.Size = new System.Drawing.Size(121, 21);
+            this.TipocomboBox.Size = new System.Drawing.Size(121, 28);
             this.TipocomboBox.TabIndex = 59;
             // 
             // CriteriotextBox
             // 
+            this.CriteriotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CriteriotextBox.Location = new System.Drawing.Point(235, 37);
             this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(128, 20);
+            this.CriteriotextBox.Size = new System.Drawing.Size(128, 26);
             this.CriteriotextBox.TabIndex = 58;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(275, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 57;
             this.label2.Text = "Criterio";
             // 
             // Tipo
             // 
             this.Tipo.AutoSize = true;
+            this.Tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tipo.Location = new System.Drawing.Point(80, 21);
             this.Tipo.Name = "Tipo";
-            this.Tipo.Size = new System.Drawing.Size(29, 13);
+            this.Tipo.Size = new System.Drawing.Size(44, 20);
             this.Tipo.TabIndex = 56;
             this.Tipo.Text = "Filtro";
             // 
             // ConsultadataGridView
             // 
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(12, 68);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(24, 114);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.Size = new System.Drawing.Size(592, 324);
             this.ConsultadataGridView.TabIndex = 55;

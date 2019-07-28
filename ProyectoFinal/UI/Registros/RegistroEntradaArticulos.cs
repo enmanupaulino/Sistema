@@ -34,6 +34,7 @@ namespace ProyectoFinal.UI.Registros
             articulo.PrecioCompra = Convert.ToDecimal(PrecioCompranumericUpDown.Value);
             articulo.PrecioVenta = Convert.ToDecimal(PrecioVentanumericUpDown.Value);
             articulo.Ganancia = Convert.ToDecimal(GananciaTextBox.Text);
+            articulo.Fecha = DateTime.Now;
 
             return articulo;
         }
@@ -151,6 +152,7 @@ namespace ProyectoFinal.UI.Registros
             PrecioVentanumericUpDown.Value = 0;
             GananciaTextBox.Text = 0.ToString();
             EntradaerrorProvider.Clear();
+            FechaDateTimePicker.Value = DateTime.Now;
             LlenarComboBox();
         }
         private void LlenaCampo(EntradaArticulos articulo)
@@ -159,7 +161,8 @@ namespace ProyectoFinal.UI.Registros
             GananciaTextBox.Text = articulo.Ganancia.ToString();
             CantidadArticulonumericUpDown.Value = articulo.Cantidad;
             PrecioVentanumericUpDown.Value = articulo.PrecioVenta;
-            PrecioCompranumericUpDown.Value = articulo.PrecioCompra;       
+            PrecioCompranumericUpDown.Value = articulo.PrecioCompra;
+            FechaDateTimePicker.Value = articulo.Fecha;
         }
         private void PrecioCompranumericUpDown_ValueChanged(object sender, EventArgs e)
         {

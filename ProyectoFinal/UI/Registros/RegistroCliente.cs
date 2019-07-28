@@ -26,6 +26,7 @@ namespace ProyectoFinal.UI.Registros
             cliente.Direccion = (DirecciontextBox.Text);
             cliente.Telefono = (TelefonomaskedTextBox.Text);
             cliente.Total = Convert.ToInt32(TotalTextbox.Text.ToString());
+            cliente.Fecha = DateTime.Now;
             
             return cliente;
         }
@@ -132,7 +133,8 @@ namespace ProyectoFinal.UI.Registros
                         DirecciontextBox.Clear();
                         TelefonomaskedTextBox.Clear();
                         TotalTextbox.Clear();
-                        ClienteerrorProvider.Clear(); ;
+                        ClienteerrorProvider.Clear();
+                        FechaDateTimePicker.Value = DateTime.Now;
                     }
                 }
 
@@ -140,22 +142,15 @@ namespace ProyectoFinal.UI.Registros
                     {
                     
                         MessageBox.Show("Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClienteIDnumericUpDown.Value = 0;
-                            NombretextBox.Clear();
-                            CedulamaskedTextBox.Clear();
-                            DirecciontextBox.Clear();
-                            TelefonomaskedTextBox.Clear();
-                            TotalTextbox.Clear();
-                            ClienteerrorProvider.Clear(); ;
+                    Limpiar();
 
-                    }
+                }
                     else{ MessageBox.Show("No se pudo guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                         
                 }
               
         }
-
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void Limpiar()
         {
             ClienteIDnumericUpDown.Value = 0;
             NombretextBox.Clear();
@@ -164,6 +159,13 @@ namespace ProyectoFinal.UI.Registros
             TelefonomaskedTextBox.Clear();
             TotalTextbox.Clear();
             ClienteerrorProvider.Clear();
+            FechaDateTimePicker.Value = DateTime.Now;
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+
 
         }
 
@@ -180,14 +182,7 @@ namespace ProyectoFinal.UI.Registros
             if (BLL.ClienteBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClienteIDnumericUpDown.Value = 0;
-                NombretextBox.Clear();
-                CedulamaskedTextBox.Clear();
-                DirecciontextBox.Clear();
-                TelefonomaskedTextBox.Clear();
-                TotalTextbox.Clear();
-                
-                ClienteerrorProvider.Clear();
+                Limpiar();
             }
 
             else
@@ -214,6 +209,8 @@ namespace ProyectoFinal.UI.Registros
                 DirecciontextBox.Text = cliente.Direccion;
                 TelefonomaskedTextBox.Text = cliente.Telefono;
                 TotalTextbox.Text = cliente.Total.ToString();
+                FechaDateTimePicker.Value = cliente.Fecha;
+          
             }
             else
                 MessageBox.Show("No se encontro", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
