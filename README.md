@@ -6,3 +6,5 @@ la facilidad, que si es a crédito, tendrá que crearse un cliente, que en esa p
 a crédito, surge otra, ventana que lleva por nombre cobro cliente, que esta consta de extraer los clientes registrados con deudas, 
 y poder ir abonándole, a la suma debida, hasta poder saldar lo que debe, cada registro consta de consulta, donde se puede filtrar 
 tanto por fecha y sin fecha.
+
+Cualquier duda favor contectarse al correo enmanupaulino@gmail.com
