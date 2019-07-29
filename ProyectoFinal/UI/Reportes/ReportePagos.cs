@@ -28,7 +28,7 @@ namespace ProyectoFinal.UI.Reportes
         {
             RePagoCliente pagoCliente = new RePagoCliente();
             pagoCliente.SetDataSource(Listapagos);
-            crystalReportViewer1.ReportSource = Listapagos;
+            crystalReportViewer1.ReportSource = pagoCliente;
             crystalReportViewer1.Refresh();
         }
     }

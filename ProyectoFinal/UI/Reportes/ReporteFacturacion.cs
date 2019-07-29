@@ -35,8 +35,12 @@ namespace ProyectoFinal.UI.Reportes
         {
             ReFacturacion reFacturacion = new ReFacturacion();
             reFacturacion.SetDataSource(ListaFacturacion);
-            crystalReportViewer1.ReportSource = ListaFacturacion;
-            crystalReportViewer1.Refresh();
+            crystalReportViewer2.ReportSource = reFacturacion;
+            crystalReportViewer2.Refresh();
+        }
+        private void Report_Load(object sender, EventArgs e)
+        {
+            CrystalReportViewer2_Load(sender, e);
         }
     }
 }

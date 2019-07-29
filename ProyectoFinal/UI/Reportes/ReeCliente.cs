@@ -23,12 +23,11 @@ namespace ProyectoFinal.UI.Reportes
 
 
 
-
         private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
             ReCliente reCliente = new ReCliente();
             reCliente.SetDataSource(ListaCliente);
-            crystalReportViewer1.ReportSource = ListaCliente;
+            crystalReportViewer1.ReportSource = reCliente;
             crystalReportViewer1.Refresh();
         }
     }

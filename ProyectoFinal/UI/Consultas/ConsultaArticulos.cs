@@ -145,6 +145,7 @@ namespace ProyectoFinal.UI.Consultas
                     && (t.Fecha.Day <= HastadateTimePicker.Value.Day) && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
                     break;
 
+                    //nombre
                 case 1:
                     LimpiarError();
                     if (SetError(2))
@@ -169,7 +170,7 @@ namespace ProyectoFinal.UI.Consultas
                     break;
 
                 //Listar Todo
-                case 4:
+                case 3:
 
                     filtrar = t => true;
                     break;

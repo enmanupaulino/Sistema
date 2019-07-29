@@ -29,8 +29,12 @@ namespace ProyectoFinal.UI.Reportes
         {
             ReArticulos reArticulos = new ReArticulos();
             reArticulos.SetDataSource(ListaArticulo);
-            crystalReportViewer1.ReportSource = ListaArticulo;
+            crystalReportViewer1.ReportSource = reArticulos;
             crystalReportViewer1.Refresh();
+        }
+        private void Report_Load(object sender, EventArgs e)
+        {
+            CrystalReportViewer1_Load(sender, e);
         }
     }
 }

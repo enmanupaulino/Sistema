@@ -108,7 +108,9 @@
             this.TipocomboBox.FormattingEnabled = true;
             this.TipocomboBox.Items.AddRange(new object[] {
             "ID",
-            "Listar Todo"});
+            "Nombre",
+            "Marca",
+            "Todo"});
             this.TipocomboBox.Location = new System.Drawing.Point(6, 62);
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(121, 28);
