@@ -22,7 +22,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra =300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);
@@ -40,7 +40,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra = 300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);
@@ -58,7 +58,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra = 300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);
@@ -76,7 +76,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra = 300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);
@@ -94,7 +94,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra = 300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);
@@ -112,7 +112,7 @@ namespace ProyectoFinal.BLL.Tests
             articulo.Fecha = DateTime.Now;
             articulo.PrecioCompra = 300;
             articulo.PrecioVenta = 350;
-            articulo.Ganancia = "50";
+            articulo.Ganancia = Convert.ToDecimal("50.00");
             articulo.Vigencia = 10;
             paso = ArticulosBLL.Guardar(articulo);
             Assert.AreEqual(paso, true);

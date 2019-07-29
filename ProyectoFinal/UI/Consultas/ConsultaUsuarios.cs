@@ -1,6 +1,6 @@
 ﻿using BLL;
 using Entidades;
-
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +16,7 @@ namespace ProyectoFinal.UI.Consultas
     public partial class ConsultaUsuarios : Form
     {
         List<Usuarios> usuarios = new List<Usuarios>();
+        private List<Usuarios> ListaUsuarios;
         public ConsultaUsuarios()
         {
             InitializeComponent();
@@ -151,6 +152,8 @@ namespace ProyectoFinal.UI.Consultas
                 CriteriotextBox.Clear();
                 UsuarioerrorProvider.Clear();
             }
+            ListaUsuarios = UsusariosBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = ListaUsuarios;
         }
 
         private bool Validar(int error)
@@ -178,23 +181,35 @@ namespace ProyectoFinal.UI.Consultas
             return paso;
         }
 
-     /*   private void ReporteButton_Click(object sender, EventArgs e)
+    /*    private void ReporteButton_Click(object sender, EventArgs e)
         {
-            Usuarios usuarios = new Usuarios();
-            if (ConsultadataGridView.Rows.Count > 0 && ConsultadataGridView.CurrentRow != null)
+          
+            if (ListaUsuarios.Count == 0)
             {
-                List<Usuarios> Detalle = (List<Usuarios>)ConsultadataGridView.DataSource;
-                int id = Detalle.ElementAt(ConsultadataGridView.CurrentRow.Index).UsuariosId;
-
-                ReporteUsuarios abrir = new ReporteUsuarios(UsusariosBLL.GetList(x => x.UsuariosId == id));
-                abrir.Show();
-            }
-            else
-            {
-                MessageBox.Show("No existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("no hay datos apra imprimir");
                 return;
             }
+            ReUsuario reUsuario = new ReUsuario(ListaUsuarios);
+            reUsuario.ShowDialog();
         }*/
+
+        /*   private void ReporteButton_Click(object sender, EventArgs e)
+           {
+               Usuarios usuarios = new Usuarios();
+               if (ConsultadataGridView.Rows.Count > 0 && ConsultadataGridView.CurrentRow != null)
+               {
+                   List<Usuarios> Detalle = (List<Usuarios>)ConsultadataGridView.DataSource;
+                   int id = Detalle.ElementAt(ConsultadataGridView.CurrentRow.Index).UsuariosId;
+
+                   ReporteUsuarios abrir = new ReporteUsuarios(UsusariosBLL.GetList(x => x.UsuariosId == id));
+                   abrir.Show();
+               }
+               else
+               {
+                   MessageBox.Show("No existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   return;
+               }
+           }*/
     }
 }
 

@@ -51,6 +51,7 @@
             this.ReporteButton.TabIndex = 61;
             this.ReporteButton.Text = "Reporte";
             this.ReporteButton.UseVisualStyleBackColor = true;
+        
             // 
             // Consultabutton
             // 

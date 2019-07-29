@@ -15,7 +15,7 @@ namespace ProyectoFinal.BLL.Tests
             EntradaArticulos entrada = new EntradaArticulos();
             entrada.EntradaArticulosID = 0;
             entrada.Articulo = "Pulsa";
-            entrada.PrecioCompra = 600;
+            entrada.PrecioCompra =  600;
             entrada.PrecioVenta = 900;
             entrada.Ganancia = 300;
             entrada.Cantidad = 4;

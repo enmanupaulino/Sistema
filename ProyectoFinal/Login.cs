@@ -31,7 +31,7 @@ namespace ProyectoFinal
             var Lista = usuarios.GetList(x => x.Usuario.Equals(UsusariotextBox.Text) && x.Contraseña.Equals(ContraseñatextBox.Text));
             Usuarios usuario = (Lista != null && Lista.Count > 0) ? Lista[0] : null;
 
-            if ((UsusariotextBox.Text == "Beethoven") && (ContraseñatextBox.Text == "081514"))
+            if ((UsusariotextBox.Text == "Enmanuel  ") && (ContraseñatextBox.Text == "12345678"))
             {
                 MainForm ver = new MainForm();
                 ver.Show();
