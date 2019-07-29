@@ -33,8 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.ReporteButton = new System.Windows.Forms.Button();
-            this.Consultabutton = new System.Windows.Forms.Button();
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,8 +40,10 @@
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.PagoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.FechaCheckBox = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ReporteButton = new System.Windows.Forms.Button();
+            this.Consultabutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PagoerrorProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,34 +83,6 @@
             this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 84;
             this.label1.Text = "Fecha Desde";
-        
-            // 
-            // ReporteButton
-            // 
-            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
-            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReporteButton.Location = new System.Drawing.Point(612, 447);
-            this.ReporteButton.Name = "ReporteButton";
-            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
-            this.ReporteButton.TabIndex = 83;
-            this.ReporteButton.Text = "Reporte";
-            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ReporteButton.UseVisualStyleBackColor = true;
-            // 
-            // Consultabutton
-            // 
-            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
-            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultabutton.Location = new System.Drawing.Point(612, 39);
-            this.Consultabutton.Name = "Consultabutton";
-            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
-            this.Consultabutton.TabIndex = 82;
-            this.Consultabutton.Text = "Consultar";
-            this.Consultabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultabutton.UseVisualStyleBackColor = true;
-            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
             // 
             // TipocomboBox
             // 
@@ -174,6 +146,17 @@
             this.groupBox1.TabIndex = 88;
             this.groupBox1.TabStop = false;
             // 
+            // FechaCheckBox
+            // 
+            this.FechaCheckBox.AutoSize = true;
+            this.FechaCheckBox.Location = new System.Drawing.Point(10, 14);
+            this.FechaCheckBox.Name = "FechaCheckBox";
+            this.FechaCheckBox.Size = new System.Drawing.Size(145, 24);
+            this.FechaCheckBox.TabIndex = 88;
+            this.FechaCheckBox.Text = "Filtrar Por Fecha";
+            this.FechaCheckBox.UseVisualStyleBackColor = true;
+            this.FechaCheckBox.CheckedChanged += new System.EventHandler(this.FechaCheckBox_CheckedChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Tipo);
@@ -186,18 +169,34 @@
             this.groupBox2.Size = new System.Drawing.Size(312, 100);
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
-     
             // 
-            // FechaCheckBox
+            // ReporteButton
             // 
-            this.FechaCheckBox.AutoSize = true;
-            this.FechaCheckBox.Location = new System.Drawing.Point(10, 14);
-            this.FechaCheckBox.Name = "FechaCheckBox";
-            this.FechaCheckBox.Size = new System.Drawing.Size(145, 24);
-            this.FechaCheckBox.TabIndex = 88;
-            this.FechaCheckBox.Text = "Filtrar Por Fecha";
-            this.FechaCheckBox.UseVisualStyleBackColor = true;
-            this.FechaCheckBox.CheckedChanged += new System.EventHandler(this.FechaCheckBox_CheckedChanged);
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
+            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReporteButton.Location = new System.Drawing.Point(612, 447);
+            this.ReporteButton.Name = "ReporteButton";
+            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
+            this.ReporteButton.TabIndex = 83;
+            this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReporteButton.UseVisualStyleBackColor = true;
+            this.ReporteButton.Click += new System.EventHandler(this.ReporteButton_Click);
+            // 
+            // Consultabutton
+            // 
+            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
+            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Consultabutton.Location = new System.Drawing.Point(612, 39);
+            this.Consultabutton.Name = "Consultabutton";
+            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
+            this.Consultabutton.TabIndex = 82;
+            this.Consultabutton.Text = "Consultar";
+            this.Consultabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
             // 
             // ConsultaPago
             // 

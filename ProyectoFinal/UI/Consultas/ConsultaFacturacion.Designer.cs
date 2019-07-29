@@ -32,6 +32,7 @@
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.FacturacionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,7 @@
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.CriteriotextBox = new System.Windows.Forms.TextBox();
+            this.ReporteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FacturacionerrorProvider)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -54,8 +55,9 @@
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(12, 136);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
-            this.ConsultadataGridView.Size = new System.Drawing.Size(592, 324);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(618, 324);
             this.ConsultadataGridView.TabIndex = 48;
+            this.ConsultadataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultadataGridView_CellContentClick);
             // 
             // FacturacionerrorProvider
             // 
@@ -74,6 +76,13 @@
             this.groupBox2.TabIndex = 92;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
+            // 
+            // CriteriotextBox
+            // 
+            this.CriteriotextBox.Location = new System.Drawing.Point(186, 64);
+            this.CriteriotextBox.Name = "CriteriotextBox";
+            this.CriteriotextBox.Size = new System.Drawing.Size(100, 26);
+            this.CriteriotextBox.TabIndex = 82;
             // 
             // label4
             // 
@@ -175,19 +184,28 @@
             this.button1.Text = "Consultar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // CriteriotextBox
+            // ReporteButton
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(186, 64);
-            this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(100, 26);
-            this.CriteriotextBox.TabIndex = 82;
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
+            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReporteButton.Location = new System.Drawing.Point(657, 465);
+            this.ReporteButton.Name = "ReporteButton";
+            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
+            this.ReporteButton.TabIndex = 93;
+            this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReporteButton.UseVisualStyleBackColor = true;
+            this.ReporteButton.Click += new System.EventHandler(this.ReporteButton_Click);
             // 
             // ConsultaFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(796, 518);
+            this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -219,5 +237,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox CriteriotextBox;
+        private System.Windows.Forms.Button ReporteButton;
     }
 }

@@ -36,13 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
-            this.Consultabutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.FechaCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ReporteButton = new System.Windows.Forms.Button();
+            this.Consultabutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArticuloerrorProvider)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowDrop = true;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(35, 124);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
@@ -112,20 +114,6 @@
             this.TipocomboBox.Size = new System.Drawing.Size(121, 28);
             this.TipocomboBox.TabIndex = 81;
             // 
-            // Consultabutton
-            // 
-            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
-            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultabutton.Location = new System.Drawing.Point(635, 39);
-            this.Consultabutton.Name = "Consultabutton";
-            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
-            this.Consultabutton.TabIndex = 90;
-            this.Consultabutton.Text = "Consultar";
-            this.Consultabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultabutton.UseVisualStyleBackColor = true;
-            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click_1);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -186,11 +174,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
+            // ReporteButton
+            // 
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
+            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReporteButton.Location = new System.Drawing.Point(635, 449);
+            this.ReporteButton.Name = "ReporteButton";
+            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
+            this.ReporteButton.TabIndex = 93;
+            this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReporteButton.UseVisualStyleBackColor = true;
+            this.ReporteButton.Click += new System.EventHandler(this.ReporteButton_Click);
+            // 
+            // Consultabutton
+            // 
+            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
+            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Consultabutton.Location = new System.Drawing.Point(635, 39);
+            this.Consultabutton.Name = "Consultabutton";
+            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
+            this.Consultabutton.TabIndex = 90;
+            this.Consultabutton.Text = "Consultar";
+            this.Consultabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click_1);
+            // 
             // ConsultaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 550);
+            this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Consultabutton);
@@ -222,5 +239,6 @@
         private System.Windows.Forms.DateTimePicker HastadateTimePicker;
         private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button ReporteButton;
     }
 }

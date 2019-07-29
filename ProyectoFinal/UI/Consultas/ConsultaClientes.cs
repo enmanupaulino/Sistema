@@ -1,7 +1,7 @@
 ﻿
 using BLL;
 using Entidades;
-
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 
@@ -15,6 +15,7 @@ namespace ProyectoFinal.UI.Consultas
     public partial class ConsultaClientes : Form
     {
         List<Cliente> clientes = new List<Cliente>();
+        private List<Cliente> ListaCliente;
         public ConsultaClientes()
         {
             InitializeComponent();
@@ -123,9 +124,6 @@ namespace ProyectoFinal.UI.Consultas
         {
             int id;
 
-
-
-
             switch (TipocomboBox.SelectedIndex)
             {
                 //ID
@@ -190,6 +188,20 @@ namespace ProyectoFinal.UI.Consultas
             }
 
             clientes = ClienteBLL.GetList(filtrar);
+        }
+
+        private void ReporteButton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("no hay datos para imprimir");
+                return;
+            }
+            else
+            {
+                ReeCliente report = new ReeCliente(ListaCliente);
+                report.ShowDialog();
+            }
         }
 
 

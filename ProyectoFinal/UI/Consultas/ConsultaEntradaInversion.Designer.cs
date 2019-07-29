@@ -43,6 +43,7 @@
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.ReporteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaerrorProvider)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -183,11 +184,25 @@
             this.label3.TabIndex = 86;
             this.label3.Text = "Fecha Hasta";
             // 
+            // ReporteButton
+            // 
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
+            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReporteButton.Location = new System.Drawing.Point(636, 456);
+            this.ReporteButton.Name = "ReporteButton";
+            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
+            this.ReporteButton.TabIndex = 94;
+            this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReporteButton.UseVisualStyleBackColor = true;
+            // 
             // ConsultaEntradaInversion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 512);
+            this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Consultabutton);
@@ -219,5 +234,6 @@
         private System.Windows.Forms.DateTimePicker HastadateTimePicker;
         private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button ReporteButton;
     }
 }

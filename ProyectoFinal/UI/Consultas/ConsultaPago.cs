@@ -1,6 +1,6 @@
 ﻿using BLL;
 using Entidades;
-
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal.UI.Consultas
 {
-   
     public partial class ConsultaPago : Form
     {
         List<Pagos> pagos = new List<Pagos>();
+        private List<Pagos> ListaPagos;
         public ConsultaPago()
         {
             InitializeComponent();
@@ -125,6 +125,20 @@ private bool SetError(int error)
             {
                 DesdedateTimePicker.Enabled = false;
                 HastadateTimePicker.Enabled = false;
+            }
+        }
+
+        private void ReporteButton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("no hay datos para imprimir");
+                return;
+            }
+            else
+            {
+                ReportePagos report = new ReportePagos(ListaPagos);
+                report.ShowDialog();
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 using BLL;
 using Entidades;
-
+using ProyectoFinal.UI.Reportes;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +16,7 @@ namespace ProyectoFinal.UI.Consultas
     {
 
         List<Articulos> articulos = new List<Articulos>();
+        private List<Articulos> ListaArticulo;
         public ConsultaArticulos()
         {
             InitializeComponent();
@@ -203,6 +204,20 @@ namespace ProyectoFinal.UI.Consultas
             {
                 DesdedateTimePicker.Enabled = false;
                 HastadateTimePicker.Enabled = false;
+            }
+        }
+
+        private void ReporteButton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("no hay datos para imprimir");
+                return;
+            }
+            else
+            {
+                ReporteArticulo report = new ReporteArticulo(ListaArticulo);
+                report.ShowDialog();
             }
         }
 

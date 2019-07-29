@@ -37,6 +37,7 @@
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
             this.Consultabutton = new System.Windows.Forms.Button();
+            this.ReporteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntradaerrorProvider)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -118,11 +119,25 @@
             this.Consultabutton.UseVisualStyleBackColor = true;
             this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click_1);
             // 
+            // ReporteButton
+            // 
+            this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
+            this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReporteButton.Location = new System.Drawing.Point(639, 473);
+            this.ReporteButton.Name = "ReporteButton";
+            this.ReporteButton.Size = new System.Drawing.Size(108, 44);
+            this.ReporteButton.TabIndex = 93;
+            this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ReporteButton.UseVisualStyleBackColor = true;
+            // 
             // ConsultaEntradaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 545);
+            this.Controls.Add(this.ReporteButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Consultabutton);
             this.Controls.Add(this.ConsultadataGridView);
@@ -145,5 +160,6 @@
         private System.Windows.Forms.TextBox CriteriotextBox;
         private System.Windows.Forms.ComboBox TipocomboBox;
         private System.Windows.Forms.Button Consultabutton;
+        private System.Windows.Forms.Button ReporteButton;
     }
 }

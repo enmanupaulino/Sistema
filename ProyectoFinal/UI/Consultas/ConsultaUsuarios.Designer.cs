@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ReporteButton = new System.Windows.Forms.Button();
-            this.Consultabutton = new System.Windows.Forms.Button();
             this.TipocomboBox = new System.Windows.Forms.ComboBox();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Tipo = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Consultabutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -44,26 +44,16 @@
             // ReporteButton
             // 
             this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
             this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReporteButton.Location = new System.Drawing.Point(623, 23);
             this.ReporteButton.Name = "ReporteButton";
             this.ReporteButton.Size = new System.Drawing.Size(108, 49);
             this.ReporteButton.TabIndex = 61;
             this.ReporteButton.Text = "Reporte";
+            this.ReporteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ReporteButton.UseVisualStyleBackColor = true;
-        
-            // 
-            // Consultabutton
-            // 
-            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultabutton.Location = new System.Drawing.Point(490, 23);
-            this.Consultabutton.Name = "Consultabutton";
-            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
-            this.Consultabutton.TabIndex = 60;
-            this.Consultabutton.Text = "Consultar";
-            this.Consultabutton.UseVisualStyleBackColor = true;
-            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
+            this.ReporteButton.Click += new System.EventHandler(this.ReporteButton_Click);
             // 
             // TipocomboBox
             // 
@@ -120,6 +110,20 @@
             // 
             this.UsuarioerrorProvider.ContainerControl = this;
             // 
+            // Consultabutton
+            // 
+            this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
+            this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Consultabutton.Location = new System.Drawing.Point(490, 23);
+            this.Consultabutton.Name = "Consultabutton";
+            this.Consultabutton.Size = new System.Drawing.Size(108, 49);
+            this.Consultabutton.TabIndex = 60;
+            this.Consultabutton.Text = "Consultar";
+            this.Consultabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Consultabutton.UseVisualStyleBackColor = true;
+            this.Consultabutton.Click += new System.EventHandler(this.Consultabutton_Click);
+            // 
             // ConsultaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +138,7 @@
             this.Controls.Add(this.ConsultadataGridView);
             this.Name = "ConsultaUsuarios";
             this.Text = "ConsultaUsuarios";
+            this.Load += new System.EventHandler(this.ConsultaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).EndInit();
             this.ResumeLayout(false);

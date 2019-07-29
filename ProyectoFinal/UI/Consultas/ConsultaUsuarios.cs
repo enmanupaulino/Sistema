@@ -181,35 +181,27 @@ namespace ProyectoFinal.UI.Consultas
             return paso;
         }
 
-    /*    private void ReporteButton_Click(object sender, EventArgs e)
+        private void ReporteButton_Click(object sender, EventArgs e)
         {
-          
-            if (ListaUsuarios.Count == 0)
+      
+            if (ConsultadataGridView.RowCount == 0)
             {
-                MessageBox.Show("no hay datos apra imprimir");
+                MessageBox.Show("no hay datos para imprimir");
                 return;
             }
-            ReUsuario reUsuario = new ReUsuario(ListaUsuarios);
-            reUsuario.ShowDialog();
-        }*/
+            else
+            {
+                Report report = new Report(ListaUsuarios);
+                report.ShowDialog();
+            }
+        }
 
-        /*   private void ReporteButton_Click(object sender, EventArgs e)
-           {
-               Usuarios usuarios = new Usuarios();
-               if (ConsultadataGridView.Rows.Count > 0 && ConsultadataGridView.CurrentRow != null)
-               {
-                   List<Usuarios> Detalle = (List<Usuarios>)ConsultadataGridView.DataSource;
-                   int id = Detalle.ElementAt(ConsultadataGridView.CurrentRow.Index).UsuariosId;
+        private void ConsultaUsuarios_Load(object sender, EventArgs e)
+        {
 
-                   ReporteUsuarios abrir = new ReporteUsuarios(UsusariosBLL.GetList(x => x.UsuariosId == id));
-                   abrir.Show();
-               }
-               else
-               {
-                   MessageBox.Show("No existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   return;
-               }
-           }*/
+        }
+
+        
     }
 }
 
