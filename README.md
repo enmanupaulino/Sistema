@@ -8,3 +8,8 @@ y poder ir abonándole, a la suma debida, hasta poder saldar lo que debe, cada r
 tanto por fecha y sin fecha.
 
 Cualquier duda favor contectarse al correo enmanupaulino@gmail.com
+
+
+![Untitled2](https://user-images.githubusercontent.com/50763850/62087603-5114c200-b230-11e9-88d9-6289068ffe8a.png)
+
+![Untitled](https://user-images.githubusercontent.com/50763850/62087604-51ad5880-b230-11e9-91ed-7141335c90b4.png)
