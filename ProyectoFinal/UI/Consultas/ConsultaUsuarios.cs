@@ -47,7 +47,7 @@ namespace ProyectoFinal.UI.Consultas
 
                         filtro = x => x.UsuariosId == id;
 
-                        if (BLL.UsusariosBLL.GetList(filtro).Count() == 0)
+                        if (UsusariosBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -74,7 +74,7 @@ namespace ProyectoFinal.UI.Consultas
                         filtro = x => x.Nombre.Contains(CriteriotextBox.Text);
 
 
-                        if (BLL.UsusariosBLL.GetList(filtro).Count() == 0)
+                        if (UsusariosBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Nombre, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -94,51 +94,27 @@ namespace ProyectoFinal.UI.Consultas
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar la Cedula con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else
                     {
                         filtro = x => x.Usuario.Equals(CriteriotextBox.Text);
 
-                        if (BLL.UsusariosBLL.GetList(filtro).Count() == 0)
+                        if (UsusariosBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show("Esta Cedula, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
                     break;
 
-                case 3://Contraseña
-
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(3))
-                    {
-                        MessageBox.Show("Debe Digitar el telefono con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-
-                        filtro = x => x.Contraseña.Equals(CriteriotextBox.Text);
-
-
-                        if (BLL.UsusariosBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show("Este Telefono, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-                    break;
+               
                     
-                case 4://TODO
+                case 3://TODO
                     filtro = x => true;
 
-                    if (BLL.UsusariosBLL.GetList(filtro).Count() == 0)
+                    if (UsusariosBLL.GetList(filtro).Count() == 0)
                     {
                         MessageBox.Show("Lista esta Vacia, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;

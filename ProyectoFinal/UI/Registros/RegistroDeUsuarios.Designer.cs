@@ -44,6 +44,10 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Nivel = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.UsuarioRadioButton = new System.Windows.Forms.RadioButton();
+            this.AdministradorRadioButton = new System.Windows.Forms.RadioButton();
             label1 = new System.Windows.Forms.Label();
             contraseñaLabel = new System.Windows.Forms.Label();
             usuarioLabel = new System.Windows.Forms.Label();
@@ -51,6 +55,7 @@
             usuariosIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
+            this.Nivel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -194,11 +199,45 @@
             // 
             this.UsuarioerrorProvider.ContainerControl = this;
             // 
+            // Nivel
+            // 
+            this.Nivel.Controls.Add(this.AdministradorRadioButton);
+            this.Nivel.Controls.Add(this.UsuarioRadioButton);
+            this.Nivel.Location = new System.Drawing.Point(228, 118);
+            this.Nivel.Name = "Nivel";
+            this.Nivel.Size = new System.Drawing.Size(200, 64);
+            this.Nivel.TabIndex = 14;
+            this.Nivel.TabStop = false;
+            this.Nivel.Text = "Nivel";
+            // 
+            // UsuarioRadioButton
+            // 
+            this.UsuarioRadioButton.AutoSize = true;
+            this.UsuarioRadioButton.Location = new System.Drawing.Point(8, 28);
+            this.UsuarioRadioButton.Name = "UsuarioRadioButton";
+            this.UsuarioRadioButton.Size = new System.Drawing.Size(61, 17);
+            this.UsuarioRadioButton.TabIndex = 0;
+            this.UsuarioRadioButton.TabStop = true;
+            this.UsuarioRadioButton.Text = "Usuario";
+            this.UsuarioRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AdministradorRadioButton
+            // 
+            this.AdministradorRadioButton.AutoSize = true;
+            this.AdministradorRadioButton.Location = new System.Drawing.Point(106, 28);
+            this.AdministradorRadioButton.Name = "AdministradorRadioButton";
+            this.AdministradorRadioButton.Size = new System.Drawing.Size(88, 17);
+            this.AdministradorRadioButton.TabIndex = 0;
+            this.AdministradorRadioButton.TabStop = true;
+            this.AdministradorRadioButton.Text = "Administrador";
+            this.AdministradorRadioButton.UseVisualStyleBackColor = true;
+            // 
             // RegistroDeUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 305);
+            this.Controls.Add(this.Nivel);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Buscarbutton);
@@ -217,6 +256,8 @@
             this.Text = "RegistroDeUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.usuariosIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).EndInit();
+            this.Nivel.ResumeLayout(false);
+            this.Nivel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +275,9 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ErrorProvider UsuarioerrorProvider;
+        private System.Windows.Forms.GroupBox Nivel;
+        private System.Windows.Forms.RadioButton AdministradorRadioButton;
+        private System.Windows.Forms.RadioButton UsuarioRadioButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

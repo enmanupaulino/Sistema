@@ -325,7 +325,7 @@
             // 
             this.MontonumericUpDown.Location = new System.Drawing.Point(551, 423);
             this.MontonumericUpDown.Maximum = new decimal(new int[] {
-            9999,
+            500000,
             0,
             0,
             0});

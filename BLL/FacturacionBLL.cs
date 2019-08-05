@@ -261,12 +261,12 @@ namespace BLL
 
         public static decimal CalcularImporte(decimal precio, decimal cantidad)
         {
-            return Convert.ToDecimal(precio) * Convert.ToInt32(cantidad);
+            return Convert.ToDecimal(precio) * Convert.ToDecimal(cantidad);
         }
 
         public static decimal CalcularDevuelta(decimal Monto, decimal Precio)
         {
-            return Convert.ToInt32(Monto) - Convert.ToInt32(Precio);
+            return Convert.ToDecimal(Monto) - Convert.ToDecimal(Precio);
         }
 
 

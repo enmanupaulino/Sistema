@@ -46,8 +46,6 @@
             this.TotalTextbox = new System.Windows.Forms.TextBox();
             this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -203,31 +201,11 @@
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(149, 20);
             this.TelefonomaskedTextBox.TabIndex = 4;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(408, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Fecha";
-            // 
-            // FechaDateTimePicker
-            // 
-            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(397, 71);
-            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(84, 20);
-            this.FechaDateTimePicker.TabIndex = 19;
-            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 391);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.TelefonomaskedTextBox);
             this.Controls.Add(this.CedulamaskedTextBox);
             this.Controls.Add(this.TotalTextbox);
@@ -273,7 +251,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

@@ -46,7 +46,7 @@
             this.ReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReporteButton.Image = global::ProyectoFinal.Properties.Resources.Print_32;
             this.ReporteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReporteButton.Location = new System.Drawing.Point(623, 23);
+            this.ReporteButton.Location = new System.Drawing.Point(577, 47);
             this.ReporteButton.Name = "ReporteButton";
             this.ReporteButton.Size = new System.Drawing.Size(108, 49);
             this.ReporteButton.TabIndex = 61;
@@ -62,10 +62,8 @@
             this.TipocomboBox.Items.AddRange(new object[] {
             "ID",
             "Nombre",
-            "Usuario",
-            "Contraseña",
-            "Listar Todo"});
-            this.TipocomboBox.Location = new System.Drawing.Point(112, 38);
+            "Usuario"});
+            this.TipocomboBox.Location = new System.Drawing.Point(66, 62);
             this.TipocomboBox.Name = "TipocomboBox";
             this.TipocomboBox.Size = new System.Drawing.Size(121, 28);
             this.TipocomboBox.TabIndex = 59;
@@ -73,7 +71,7 @@
             // CriteriotextBox
             // 
             this.CriteriotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriteriotextBox.Location = new System.Drawing.Point(311, 39);
+            this.CriteriotextBox.Location = new System.Drawing.Point(265, 63);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(128, 26);
             this.CriteriotextBox.TabIndex = 58;
@@ -82,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(351, 23);
+            this.label2.Location = new System.Drawing.Point(305, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 57;
@@ -92,7 +90,7 @@
             // 
             this.Tipo.AutoSize = true;
             this.Tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tipo.Location = new System.Drawing.Point(156, 23);
+            this.Tipo.Location = new System.Drawing.Point(110, 47);
             this.Tipo.Name = "Tipo";
             this.Tipo.Size = new System.Drawing.Size(44, 20);
             this.Tipo.TabIndex = 56;
@@ -115,7 +113,7 @@
             this.Consultabutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Consultabutton.Image = global::ProyectoFinal.Properties.Resources.search_32;
             this.Consultabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultabutton.Location = new System.Drawing.Point(490, 23);
+            this.Consultabutton.Location = new System.Drawing.Point(444, 47);
             this.Consultabutton.Name = "Consultabutton";
             this.Consultabutton.Size = new System.Drawing.Size(108, 49);
             this.Consultabutton.TabIndex = 60;

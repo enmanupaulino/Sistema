@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using DAL.Script;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,22 @@ namespace ProyectoFinal.UI.Registros
         public RegistroDeUsuarios()
         {
             InitializeComponent();
+            Limpiar();
+            AdministradorRadioButton.Checked = true;
+
         }
 
+        public String Check()
+        {
+            string Nivel = string.Empty;
+            if (AdministradorRadioButton.Checked == true)
+                Nivel = Constantes.admi;
+            else if (UsuarioRadioButton.Checked == true)
+                Nivel = Constantes.user;
+            return Nivel;
+            
 
+        }
         private bool validar(int error)
         {
             bool errores = false;
@@ -65,21 +79,66 @@ namespace ProyectoFinal.UI.Registros
                 UsuarioerrorProvider.SetError(ConfirmartextBox, "Llenar Confirmar Contraseña");
                 errores = true;
             }
-            
+
+            if (error== 5 && usuariosIdNumericUpDown.Value == 0)
+            {
+                bool paso = false;
+                Usuarios usuario = new Usuarios();
+                var listado = new List<Usuarios>();
+                listado = UsusariosBLL.GetList(p => true);
+                string descripcion = usuarioTextBox.Text;
+                foreach (var i in listado)
+                {
+                    if (descripcion == i.Usuario)
+                    {
+                        MessageBox.Show("Este Usuario ya está registrado", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return  paso;
+                    }
+                }
+            }
+
             return errores;
 
         }
+        public string DesEncriptar(string cadenaDesencriptada)
+        {
+            string resultado = string.Empty;
+            byte[] decryted = Convert.FromBase64String(cadenaDesencriptada);
+            resultado = System.Text.Encoding.Unicode.GetString(decryted);
 
+            return resultado;
+        }
+        public string Encriptar(string cadenaEncriptada)
+        {
+            string resultado = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(cadenaEncriptada);
+            resultado = Convert.ToBase64String(encryted);
+
+            return resultado;
+        }
         private Usuarios Llenaclase()
         {
             Usuarios usuarios = new Usuarios();
             usuarios.UsuariosId = Convert.ToInt32(usuariosIdNumericUpDown.Value);
             usuarios.Nombre = nombreTextBox.Text;
             usuarios.Usuario = usuarioTextBox.Text;
-            usuarios.Contraseña = contraseñaTextBox.Text;
-            
-        
+            usuarios.Contraseña = Encriptar(contraseñaTextBox.Text.Trim());
+            usuarios.NivelUsuario = Check();
             return usuarios;
+        }
+
+        private void LlenaCampo(Usuarios usuarios)
+        {
+            usuariosIdNumericUpDown.Value = usuarios.UsuariosId;
+            nombreTextBox.Text = usuarios.Nombre;
+            usuarioTextBox.Text = usuarios.Usuario;
+            ConfirmartextBox.Text = usuarios.Contraseña;
+            
+            Nivel.Text = Check();
+            contraseñaTextBox.Text = usuarios.Contraseña;
+
+  
+
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
@@ -91,6 +150,7 @@ namespace ProyectoFinal.UI.Registros
 
             usuariosIdNumericUpDown.Value = 0;
             nombreTextBox.Clear();
+            usuarioTextBox.Clear();
             contraseñaTextBox.Clear();
             ConfirmartextBox.Clear();
             UsuarioerrorProvider.Clear();
@@ -118,7 +178,11 @@ namespace ProyectoFinal.UI.Registros
                 ConfirmartextBox.Clear();
                 return;
             }
-
+            
+            if (validar(5))
+            {
+                MessageBox.Show("este Usuario ya esta registrado");
+            }
             if (validar(2))
             {
                 MessageBox.Show("Favor de Llenar las Casillas");
@@ -194,10 +258,8 @@ namespace ProyectoFinal.UI.Registros
 
                 if (usuarios != null)
                 {
-                    usuariosIdNumericUpDown.Value = usuarios.UsuariosId;
-                    nombreTextBox.Text = usuarios.Nombre;
-                    usuarioTextBox.Text = usuarios.Usuario;
-                    contraseñaTextBox.Text = usuarios.Contraseña;
+                    MessageBox.Show("Usuario Encontrado");
+                    LlenaCampo(usuarios);
                     
 
                 }

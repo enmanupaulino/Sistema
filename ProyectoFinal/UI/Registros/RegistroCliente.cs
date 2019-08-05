@@ -159,7 +159,7 @@ namespace ProyectoFinal.UI.Registros
             TelefonomaskedTextBox.Clear();
             TotalTextbox.Clear();
             ClienteerrorProvider.Clear();
-            FechaDateTimePicker.Value = DateTime.Now;
+       
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

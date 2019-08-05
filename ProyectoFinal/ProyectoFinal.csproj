@@ -118,6 +118,12 @@
     <Compile Include="UI\Registros\InversionEmpresa.Designer.cs">
       <DependentUpon>InversionEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\InversionEmpresa.resx">
       <DependentUpon>InversionEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroArticulos.resx">
       <DependentUpon>RegistroArticulos.cs</DependentUpon>
